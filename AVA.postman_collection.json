@@ -1,0 +1,646 @@
+{
+	"info": {
+		"_postman_id": "8e3fa899-9e82-4f14-9a05-02706cf69ef6",
+		"name": "AVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar Saldo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :2,\n    \"method\" :\"avm.getBalance\",\n    \"params\" :{\n        \"address\":\"X-DfTuEFjHL1Te2z7kQS5cCxYknUym9WaKP\",\n        \"assetID\":\"AVA\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"jsonrpc\": \"2.0\",\n     \"id\": 1,\n     \"method\": \"keystore.createUser\",\n     \"params\": {\n         \"username\": \"seminario\",\n         \"password\": \"covid-19\"\n     }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/keystore",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"keystore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Cadena X",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :2,\n    \"method\" :\"avm.createAddress\",\n    \"params\" :{\n        \"username\":\"seminario\",\n        \"password\":\"covid-19\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar Transaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :6,\n    \"method\" :\"avm.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"GQUa2isHw7m4puxoBqX9kA3zYBNrS5GwVijtEbj99k1iaSj7U\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferir Fondos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :5,\n    \"method\" :\"avm.send\",\n    \"params\" :{\n        \"username\"   :\"YOUR USERNAME HERE\",\n        \"password\"   :\"YOUR PASSWORD HERE\",\n        \"assetID\"    :\"AVA\",\n        \"amount\"     :1000,\n        \"to\"         :\"X-FxgGhoAwg3dPTPhHEmjgi27ZPmvc8jQmj\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Cadena P",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAccount\",\n    \"params\": {\n        \"username\":\"YOUR USERNAME HERE\",\n        \"password\":\"YOUR PASSWORD HERE\"\n    },\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exportar Fondos a cadena P",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVA\",\n    \"params\" :{\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"amount\": 10000,\n        \"username\":\"YOUR USERNAME HERE\",\n        \"password\":\"YOUR PASSWORD HERE\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Importar AVA a Cadena P",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVA\",\n    \"params\": {\n        \"username\":\"YOUR USERNAME HERE\",\n        \"password\":\"YOUR PASSWORD HERE\",\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar cuenta Cadena P",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getAccount\",\n    \"params\":{\n        \"address\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\"\n    },\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ID del nodo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"admin.getNodeID\",\n    \"params\":{},\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Asset Suministro Fijo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Patoken\",\n        \"symbol\":\"PAT\",\n        \"initialHolders\": [\n            {\n                \"address\": \"X-DfTuEFjHL1Te2z7kQS5cCxYknUym9WaKP\",\n                \"amount\": 1000\n            }\n        ],\n        \"username\":\"seminario\",\n        \"password\":\"covid-19\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferir Asset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :3,\n    \"method\" :\"avm.send\",\n    \"params\" :{\n        \"username\":\"yourUsername\",\n        \"password\":\"yourPassword\",\n        \"assetID\" :\"keMuoTQSGjqZbNVTCcbrwuNNNv9eEEZWBaRY3TapcgjkoZmQ1\",\n        \"amount\"  :100,\n        \"to\"      :\"X-9R5xWj1DkMtGVDQmyTB4uNnvYdCnj57pa\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Mintable Asset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"Corp. Shares\",\n        \"symbol\":\"CS\",\n        \"minterSets\":[\n            {\n                \"minters\": [\n                    \"X-No525ybWCY8jNwkPE8tcwwfFnQTWsL3aH\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-EMFBcgAKyToN7PSAaFkyTFhVmgXqK3BRG\",\n                    \"X-BuHCPN7JmzKJZnHrLgEvSo6pQeL1kivzM\",\n                    \"X-AomEKCh7bDsh2rPMS8aq6jzG1Q3g3GMNh\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\":\"yourUsername\",\n        \"password\":\"yourPassword\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unsigned Mint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 7,\n    \"method\" :\"avm.createMintTx\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"i1EqsthjiFTxunrj8WD2xFSrQ5p2siEKQacmCCB5qBFVqfSL2\",\n        \"to\":\"X-3dj8tFUAv8zCF8nktYFvonJcRMv8H8ARJ\",\n        \"minters\":[\n            \"X-EMFBcgAKyToN7PSAaFkyTFhVmgXqK3BRG\",\n            \"X-BuHCPN7JmzKJZnHrLgEvSo6pQeL1kivzM\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sing Minter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 8,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdxEJYZEdDc3gkmjksVUPSw1uE5iEBXgBJ8mtG5Hcdys1wfqbMewcGQiwrX4oARgu9RSouv7BfJwAimBHCPnELJ4s8mNrv7UCfShuVE6c7BzdRSKXZr1eLiBdpjZRfGBT5fV4CUxd31zuvpozJSYyGD8ugzejmz2s2peTb4pzCyCa9GL8hajP9wMcokH1hLW2KK9FCkMZ8fUHgABPvSQFHwFvEroYPqVNwetFdz39enBVcZF7xTajCU718NCeqYtMMApNmwJzXXejCTPAN1Uo4hKoeuRaAwQXJRvoVHK9iDq4DumFx84FYVCuKPF1C78Khd3qB2kNUoVm6fwt4aDd1A8pyBhNUkSweP4Bcdo4U3\",\n        \"minter\":\"X-EMFBcgAKyToN7PSAaFkyTFhVmgXqK3BRG\",\n        \"username\":\"yourUsername\",\n        \"password\":\"yourPassword\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue Tx",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 10,\n    \"method\" :\"avm.issueTx\",\n    \"params\" :{\n        \"tx\":\"111DodqUkFYB5DCHpPtzwmfEur9TnNRK8G7AvJixtMXhvKybf3FY4FZimmwxvA2RkqpQGBi7Dad161ZX3DZ6pohH7fUM1G9N57b43k29rWRyqcZw3r2Gj24KhC8FTbWJGAVAdVRg1biufVgD5apRq7tuz5uCMCFpCifqjkYdeAj7R15nENQiknTqHaTMWzY7UGxwMgbo1HfQmraDnUELnHWpJ9sCi5tnFVY97MtCGg15tyPyeXQRVPvdFtB3FCrFhPct3KEGiwxukhHSgb9xs66oTgcnJJLgSxmwgS6tFNvMVFJJqA7gtMyXnDU3do7gSJzKhrvofgPFMVw62J8AhqLCSWWkqnFrV4eDTTEWyoUUomEkXhsioy839UmdcE1u7fnc8kHCJ2hMfDMcKgLihyYVJDmBD87phm1hSFuWGHSNZruBBRktCSFWHFZCBEZxLHu221PLiDL3RmsKckXp87ywsGT9SDfXjjRuHFq3fmpaDXSYZrGuW3XpFScs8r4Ho1aHmiGdsLUVH1BbWaGkPDTCxMMhDaVDfMMLeLT2ULQyjA\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/X",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar estado cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getAccount\",\n    \"params\":{\n        \"address\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\"\n    },\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unsigned Agregar Validador Subnet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"payerNonce\":2,\n        \"destination\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"startTime\":'0',\n        \"endTime\":'0',\n        \"stakeAmount\":10000\n    },\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firmar Transaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111fRKBNoBhBfeGvBzvz6r9dZUKbEnUypM6tjiSyYrWM4ojSTuL2Syxv8cFLphtYaxdM1EA3Aj4yej8ABSfmjb9NMrtxQac9cnWwCER7GHSzFULB25hAtzGtJ8XhsrKcvtpAM8FwjRzg3Bg1q6V8GTKGMC219bYMETS48GMFGh4nts1Jsf246rjZ26r1Vyok8MdnoaxjQWR6cKq\",\n        \"signer\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"username\":\"YOUR USERNAME HERE\",\n        \"password\":\"YOUR PASSWORD HERE\"\n    },\n    \"id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"P"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Validadores Pendientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {},\n    \"id\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/P",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"P"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
